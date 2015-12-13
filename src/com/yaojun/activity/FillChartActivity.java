@@ -55,13 +55,13 @@ public class FillChartActivity extends Activity{
 			while(content.hasMoreTokens()){
 				
 				randmap(map, Double.parseDouble(content.nextToken().toString()));
-				coolingTimesReal.setText(content.nextToken().toString());
-				fillPressReal.setText(content.nextToken().toString());
-				lowTemTimesReal.setText(content.nextToken().toString());
+				coolingTimesReal.setText(content.nextToken().toString()+"S");
+				fillPressReal.setText(content.nextToken().toString()+"S");
+				lowTemTimesReal.setText(content.nextToken().toString()+"S");
 				
-				coolingTimesOption.setText(content.nextToken().toString());
-				fillPressOption.setText(content.nextToken().toString());
-				lowTemTimesOption.setText(content.nextToken().toString());
+				coolingTimesOption.setText(content.nextToken().toString()+"S");
+				fillPressOption.setText(content.nextToken().toString()+"S");
+				lowTemTimesOption.setText(content.nextToken().toString()+"S");
 				
 		  }
 			

@@ -128,9 +128,6 @@ public class DeviceStatusActivity extends Activity{
 				upModelProcess.setProgress(Integer.parseInt(content.nextToken().toString()));
 				center.setText(content.nextToken().toString());
 				down.setText(content.nextToken().toString());
-				
-				
-				
 		 }
 			
 			super.handleMessage(msg);
