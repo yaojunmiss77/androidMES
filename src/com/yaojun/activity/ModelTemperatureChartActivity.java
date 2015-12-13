@@ -40,7 +40,7 @@ public class ModelTemperatureChartActivity extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.model_temperature);
+		setContentView(R.layout.model_temperature_new);
 
 		tu= (MyChartView)findViewById(R.id.modelTemChart);
 		tu.SetTuView(map,50,10,"x","y",false);

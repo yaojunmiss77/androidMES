@@ -91,7 +91,9 @@ public final class R {
     }
     public static final class id {
         public static final int CoolingTimes=0x7f0b002a;
-        public static final int LoginButton=0x7f0b002f;
+        public static final int CoolingTimesOption=0x7f0b0030;
+        public static final int CoolingTimesReal=0x7f0b002d;
+        public static final int LoginButton=0x7f0b0035;
         public static final int alarmAluQuantity=0x7f0b0004;
         public static final int alarmContent=0x7f0b0000;
         public static final int aluQuality=0x7f0b0002;
@@ -104,32 +106,36 @@ public final class R {
         public static final int compensatePress=0x7f0b0007;
         public static final int deviceDate=0x7f0b0011;
         public static final int deviceImage=0x7f0b000d;
-        public static final int deviceList=0x7f0b0030;
+        public static final int deviceList=0x7f0b0036;
         public static final int deviceName=0x7f0b000e;
         public static final int deviceNumber=0x7f0b0010;
         public static final int deviceType=0x7f0b000f;
         public static final int down=0x7f0b0027;
         public static final int fillTimes=0x7f0b002b;
+        public static final int fillTimesOption=0x7f0b0031;
+        public static final int fillTimesReal=0x7f0b002e;
         public static final int lowPressTimes=0x7f0b0029;
-        public static final int menu_ch=0x7f0b0035;
-        public static final int menu_ch2=0x7f0b0036;
-        public static final int menu_settings=0x7f0b0034;
+        public static final int lowPressTimesOption=0x7f0b002f;
+        public static final int lowPressTimesReal=0x7f0b002c;
+        public static final int menu_ch=0x7f0b003b;
+        public static final int menu_ch2=0x7f0b003c;
+        public static final int menu_settings=0x7f0b003a;
         public static final int menulist=0x7f0b000b;
-        public static final int modelTemChart=0x7f0b0031;
-        public static final int numberEdit=0x7f0b002c;
+        public static final int modelTemChart=0x7f0b0037;
+        public static final int numberEdit=0x7f0b0032;
         public static final int oneFive=0x7f0b0018;
         public static final int oneFour=0x7f0b0017;
         public static final int oneOne=0x7f0b0014;
         public static final int oneThree=0x7f0b0016;
         public static final int oneTwo=0x7f0b0015;
         public static final int overageUserQuantity=0x7f0b0005;
-        public static final int passwordEdit=0x7f0b002e;
+        public static final int passwordEdit=0x7f0b0034;
         public static final int pressDeviation=0x7f0b0006;
-        public static final int process=0x7f0b0033;
+        public static final int process=0x7f0b0039;
         public static final int rela=0x7f0b000a;
         public static final int tableLayout=0x7f0b0028;
         public static final int textView1=0x7f0b000c;
-        public static final int textview=0x7f0b002d;
+        public static final int textview=0x7f0b0033;
         public static final int threeFive=0x7f0b0022;
         public static final int threeFour=0x7f0b0021;
         public static final int threeOne=0x7f0b001e;
@@ -143,7 +149,7 @@ public final class R {
         public static final int twoThree=0x7f0b001b;
         public static final int twoTwo=0x7f0b001a;
         public static final int up=0x7f0b0025;
-        public static final int upModelImage=0x7f0b0032;
+        public static final int upModelImage=0x7f0b0038;
         public static final int upModelProcess=0x7f0b0024;
     }
     public static final class layout {
@@ -155,15 +161,17 @@ public final class R {
         public static final int device_new_status=0x7f030005;
         public static final int device_status=0x7f030006;
         public static final int fill_pressure_chart=0x7f030007;
-        public static final int login=0x7f030008;
-        public static final int main=0x7f030009;
-        public static final int model_temperature=0x7f03000a;
-        public static final int monitor=0x7f03000b;
-        public static final int open_model_close_model_order=0x7f03000c;
-        public static final int poster=0x7f03000d;
-        public static final int stove_status=0x7f03000e;
-        public static final int upmodel_new_status=0x7f03000f;
-        public static final int upmodel_status=0x7f030010;
+        public static final int fill_pressure_chart_new=0x7f030008;
+        public static final int login=0x7f030009;
+        public static final int main=0x7f03000a;
+        public static final int model_temperature=0x7f03000b;
+        public static final int model_temperature_new=0x7f03000c;
+        public static final int monitor=0x7f03000d;
+        public static final int open_model_close_model_order=0x7f03000e;
+        public static final int poster=0x7f03000f;
+        public static final int stove_status=0x7f030010;
+        public static final int upmodel_new_status=0x7f030011;
+        public static final int upmodel_status=0x7f030012;
     }
     public static final class menu {
         public static final int chart=0x7f0a0000;

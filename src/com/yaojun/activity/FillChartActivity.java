@@ -29,7 +29,9 @@ import tool.ToastUtil;
 
 public class FillChartActivity extends Activity{
 	
-	TextView coolingTimes,fillPress,lowTemTimes,textView1;
+	TextView coolingTimesReal,fillPressReal,lowTemTimesReal,textView1;
+	TextView coolingTimesOption,fillPressOption,lowTemTimesOption;
+	
 	String fillData,lowTemData,coolingData;
 	MyChartView tu;
 	private String deviceNumber;
@@ -53,9 +55,13 @@ public class FillChartActivity extends Activity{
 			while(content.hasMoreTokens()){
 				
 				randmap(map, Double.parseDouble(content.nextToken().toString()));
-				coolingTimes.setText(content.nextToken().toString());
-				fillPress.setText(content.nextToken().toString());
-				lowTemTimes.setText(content.nextToken().toString());
+				coolingTimesReal.setText(content.nextToken().toString());
+				fillPressReal.setText(content.nextToken().toString());
+				lowTemTimesReal.setText(content.nextToken().toString());
+				
+				coolingTimesOption.setText(content.nextToken().toString());
+				fillPressOption.setText(content.nextToken().toString());
+				lowTemTimesOption.setText(content.nextToken().toString());
 				
 		  }
 			
@@ -68,11 +74,15 @@ public class FillChartActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fill_pressure_chart);
-		coolingTimes=(TextView)findViewById(R.id.CoolingTimes);
-		fillPress=(TextView)findViewById(R.id.fillTimes);
-		lowTemTimes=(TextView)findViewById(R.id.lowPressTimes);
-		textView1=(TextView)findViewById(R.id.textView1);
+		setContentView(R.layout.fill_pressure_chart_new);
+		
+		coolingTimesReal=(TextView)findViewById(R.id.CoolingTimesReal);
+		fillPressReal=(TextView)findViewById(R.id.fillTimesReal);
+		lowTemTimesReal=(TextView)findViewById(R.id.lowPressTimesReal);
+		
+		coolingTimesOption=(TextView)findViewById(R.id.CoolingTimesOption);
+		fillPressOption=(TextView)findViewById(R.id.fillTimesOption);
+		lowTemTimesOption=(TextView)findViewById(R.id.lowPressTimesOption);
 
 		
 		Intent intent=getIntent();

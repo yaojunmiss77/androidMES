@@ -124,10 +124,10 @@ public class DeviceStatusActivity extends Activity{
 			
 				aluStoveListView.setAdapter(aluStoveSimpleAdapter);*/
 				
-				up.setText("上位值："+content.nextToken().toString());
+				up.setText(content.nextToken().toString());
 				upModelProcess.setProgress(Integer.parseInt(content.nextToken().toString()));
-				center.setText("顶出位值："+content.nextToken().toString());
-				down.setText("下位值："+content.nextToken().toString());
+				center.setText(content.nextToken().toString());
+				down.setText(content.nextToken().toString());
 				
 				
 				
