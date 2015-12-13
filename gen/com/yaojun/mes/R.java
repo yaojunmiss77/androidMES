@@ -128,9 +128,9 @@ public final class R {
         public static final int lowPressTimes=0x7f0b0029;
         public static final int lowPressTimesOption=0x7f0b002f;
         public static final int lowPressTimesReal=0x7f0b002c;
-        public static final int menu_ch=0x7f0b003c;
-        public static final int menu_ch2=0x7f0b003d;
-        public static final int menu_settings=0x7f0b003b;
+        public static final int menu_ch=0x7f0b003d;
+        public static final int menu_ch2=0x7f0b003e;
+        public static final int menu_settings=0x7f0b003c;
         public static final int menulist=0x7f0b000b;
         public static final int modelTemChart=0x7f0b0037;
         public static final int numberEdit=0x7f0b0032;
@@ -142,9 +142,10 @@ public final class R {
         public static final int overageUserQuantity=0x7f0b0005;
         public static final int passwordEdit=0x7f0b0034;
         public static final int pressDeviation=0x7f0b0006;
-        public static final int process=0x7f0b003a;
+        public static final int process=0x7f0b003b;
         public static final int rela=0x7f0b000a;
-        public static final int tab_label=0x7f0b0038;
+        public static final int select_road=0x7f0b0038;
+        public static final int tab_label=0x7f0b0039;
         public static final int tableLayout=0x7f0b0028;
         public static final int textView1=0x7f0b000c;
         public static final int textview=0x7f0b0033;
@@ -161,7 +162,7 @@ public final class R {
         public static final int twoThree=0x7f0b001b;
         public static final int twoTwo=0x7f0b001a;
         public static final int up=0x7f0b0025;
-        public static final int upModelImage=0x7f0b0039;
+        public static final int upModelImage=0x7f0b003a;
         public static final int upModelProcess=0x7f0b0024;
     }
     public static final class layout {

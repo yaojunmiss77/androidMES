@@ -19,6 +19,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.Spinner;
 import android.widget.Toast;
 import tool.MyChartView;
 import tool.ToastUtil;
@@ -27,6 +31,8 @@ import tool.MyChartView.Mstyle;
 
 @SuppressLint("HandlerLeak")
 public class ModelTemperatureChartActivity extends Activity{
+	
+	Spinner selectRoad;
 	Handler handler;
 	ClientThread clientThread;
 	MyChartView tu;
@@ -43,6 +49,8 @@ public class ModelTemperatureChartActivity extends Activity{
 		setContentView(R.layout.model_temperature_new);
 
 		tu= (MyChartView)findViewById(R.id.modelTemChart);
+		selectRoad=(Spinner)findViewById(R.id.select_road);
+		
 		tu.SetTuView(map,50,10,"x","y",false);
 		map=new HashMap<Double, Double>();
 		map.put(1.0, (double) 0);
@@ -92,6 +100,23 @@ public class ModelTemperatureChartActivity extends Activity{
 			
 			e.printStackTrace();
 		}
+		
+		selectRoad.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				// TODO Auto-generated method stub
+				
+				System.out.println("你已经选择了我"+position);
+				
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 	
 	@Override
