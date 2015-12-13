@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TableLayout 
+	android:background="@drawable/shape_bg" 
+	android:paddingLeft="6.0dip" 
+	android:paddingTop="5.0dip" 
+	android:paddingRight="6.0dip" 
+	android:paddingBottom="5.0dip" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content" 
+	android:layout_marginLeft="8.0dip" 
+	android:layout_marginTop="0.0dip" 
+	android:layout_marginRight="8.0dip" 
+	android:layout_marginBottom="9.0dip"
+	
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    
+    <TableRow>
+        <TextView android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="产品重量" android:layout_weight="1.0" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="总可用铝量" android:layout_weight="1.0" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="报警提示用铝量" android:layout_weight="1.0" />
+    </TableRow>
+    <TableRow>
+        <TextView android:id="@+id/aluQuality" android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+        <TextView android:id="@+id/aluQuantity" android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+        <TextView android:id="@+id/alarmAluQuantity" android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+    </TableRow>
+    <TableRow>
+        <TextView android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="压力报警" android:layout_weight="1.0" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="补偿压力" android:layout_weight="1.0" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="剩余铝液可铸件数" android:layout_weight="1.0" />
+    </TableRow>
+    <TableRow>
+        <TextView android:id="@+id/pressDeviation" android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+        <TextView android:id="@+id/compensatePress" android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+        <TextView android:id="@+id/overageUserQuantity" android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+    </TableRow>
+    <TableRow>
+        <TextView android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="铝液炉实时压力" android:layout_weight="1.0" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="铝液炉电压值" android:layout_weight="1.0" />
+    </TableRow>
+    <TableRow>
+        <TextView android:id="@+id/aluRealtime" android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+        <TextView android:id="@+id/aluVoltage" android:textSize="14.0sp" android:textColor="@color/traffic_txt" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" />
+    </TableRow>
+</TableLayout>

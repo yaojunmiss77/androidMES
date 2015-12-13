@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rela"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/beijing"
+    android:gravity="center">
+
+    <tool.MyChartView
+        android:id="@+id/modelTemChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dip"
+        android:layout_margin="5dip" />
+    
+    
+    <Spinner 
+        android:layout_below="@id/modelTemChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/tongdao"/>
+    
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="浙江工业大学出版"
+        android:textSize="15sp"/>"
+
+
+</RelativeLayout>

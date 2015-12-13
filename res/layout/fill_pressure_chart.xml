@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rela"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/beijing"
+    android:gravity="center">
+
+    <tool.MyChartView
+        android:id="@+id/menulist"
+        android:layout_width="match_parent"
+        android:layout_height="300dip"
+        android:layout_margin="5dip" />
+    
+    <TableLayout 
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menulist"
+        android:paddingTop="40dip"
+        >
+   
+        <TableRow
+            android:gravity="center"
+            android:padding="10dip">
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="低压时间"
+                android:textSize="20dip"
+                android:padding="8dip"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="冷却时间"
+                android:textSize="20dip"
+                android:padding="8dip"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="充型压力"
+                android:textSize="20dip"
+                android:padding="8dip"/>
+            
+        </TableRow>
+        
+         <TableRow android:gravity="center">
+            
+            <TextView android:id="@+id/lowPressTimes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:padding="8dip"/>
+            <TextView android:id="@+id/CoolingTimes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:padding="8dip"/>
+            <TextView android:id="@+id/fillTimes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:padding="8dip"/>
+            
+        </TableRow>
+        
+    </TableLayout>
+    
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="浙江工业大学出版"
+        android:textSize="15sp"/>"
+
+
+</RelativeLayout>

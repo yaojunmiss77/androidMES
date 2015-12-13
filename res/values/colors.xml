@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>   
+<color name="transparent">#9000</color>  
+<color name="black">#000000</color>  
+<color name="white">#ffffff</color> 
+<color name="red">#FF0000</color>
+<color name="traffic_txt">#ff414141</color>
+<color name="traffic_data">#ff666666</color>
+
+	<drawable name="white">#ffffffff</drawable>
+	<drawable name="black">#000000</drawable>
+	
+	<drawable name="background_color">#eeeeee</drawable>
+	
+	<drawable name="edittext_hint_color">#e5e5e5</drawable>
+	<drawable name="textview_color">#525252</drawable>
+	
+	<drawable name="top_background_color">#474747</drawable>
+	<drawable name="bottom_background_color">#313231</drawable>
+	
+	<drawable name="listview_title_backgroud_color">#939393</drawable>
+
+ 
+</resources>

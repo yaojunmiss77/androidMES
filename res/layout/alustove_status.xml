@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    
+    <ImageView android:id="@+id/aluStoveImage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dip"
+    android:paddingTop="0dip"/>
+
+<LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dip"
+        android:paddingTop="5dip"
+        android:text="铝液炉状态值"
+        android:textColor="@color/black"/>
+    
+    <TextView android:id="@+id/aluQuality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:paddingTop="5dip"
+        android:textColor="@color/black"/>
+    
+    <TextView android:id="@+id/aluQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+    
+    <TextView android:id="@+id/alarmAluQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+    
+     <TextView android:id="@+id/overageUserQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+     <TextView android:id="@+id/pressDeviation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+     <TextView android:id="@+id/compensatePress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+     <TextView android:id="@+id/aluRealtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+     <TextView android:id="@+id/aluVoltage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+    
+</LinearLayout>
+    
+
+</LinearLayout>

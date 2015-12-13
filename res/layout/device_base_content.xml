@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+<tool.RoundCornerImageView android:id="@+id/deviceImage"
+    android:layout_width="67.5sp"
+    android:layout_height="127.5sp"
+    android:padding="5dip"
+    android:paddingTop="0dip"
+    android:background="@drawable/device"/>
+
+<LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <TextView android:id="@+id/deviceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dip"
+        android:paddingTop="5dip"
+        android:textColor="@color/black"/>
+    <RatingBar android:numStars="5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/ratingBarStyleSmall"
+        android:max="255"
+        android:progress="255"
+        android:stepSize="0.5"/>
+    
+    <TextView android:id="@+id/deviceType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+    
+    <TextView android:id="@+id/deviceNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+    
+     <TextView android:id="@+id/deviceDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+    
+</LinearLayout>
+    
+
+</LinearLayout>

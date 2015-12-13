@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout 
+		android:orientation="vertical" 
+        android:background="@null" 
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		xmlns:android="http://schemas.android.com/apk/res/android">
+  
+<!--     <TextView 
+    android:id="@+id/titleBar"
+    android:textSize="18.0sp" 
+    android:textColor="#ffffffff" 
+    android:gravity="center" 
+    android:layout_width="fill_parent" 
+    android:layout_height="44.0dip" 
+    android:text="查看流量统计" 
+    android:background="@drawable/skinpic_green" 
+    /> -->
+
+    <ScrollView 
+    android:scrollbarThumbVertical="@drawable/scrollbar_handle_vertical" 
+    android:background="#ffecf0f1" 
+    android:layout_width="fill_parent" 
+    android:layout_height="0.0px" 
+    android:layout_weight="1.0">
+    
+        <LinearLayout 
+        android:orientation="vertical" 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent" >
+
+            <TextView 
+            android:textColor="#ff414141" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="14.0dip" 
+            android:layout_marginTop="7.0dip" 
+            android:layout_marginBottom="7.0dip" 
+            android:textStyle="bold"
+            android:text="开模合模顺序" />
+            
+            <include 
+            android:id="@+id/trafic_today_tbl" 
+            layout="@layout/open_model_close_model_order" />
+            
+           <TextView 
+           android:textColor="#ff414141" 
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content" 
+           android:layout_marginLeft="14.0dip" 
+           android:layout_marginTop="7.0dip" 
+           android:layout_marginBottom="7.0dip" 
+           android:textStyle="bold"
+           android:text="铝液炉状态" />
+           
+			<include 
+			android:id="@+id/trafic_month_tbl" 
+			layout="@layout/stove_status" />
+			
+			
+           <TextView 
+           android:textColor="#ff414141" 
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content" 
+           android:layout_marginLeft="14.0dip" 
+           android:layout_marginTop="7.0dip" 
+           android:layout_marginBottom="7.0dip" 
+           android:textStyle="bold"
+           android:text="上模状态" />
+           
+			<include 
+			android:id="@+id/trafic_month_tbl" 
+			layout="@layout/upmodel_new_status" />
+            
+            <TextView 
+            android:textSize="12.0sp" 
+            android:textColor="#ff414141" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="10.0dip" 
+            android:layout_marginTop="2.0dip" 
+            android:layout_marginBottom="10.0dip" 
+            android:text="*以上数据是设备状态实时值，该实时值的获取请在wifi条件下进行，土豪随意" />
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

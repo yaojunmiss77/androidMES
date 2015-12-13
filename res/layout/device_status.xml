@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/beijing" >
+
+    <TableRow 
+       android:gravity="center"
+       android:padding="5sp">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分类"
+            android:padding="5sp"/>
+         <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主缸"
+            android:padding="5sp"/>
+          <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="侧模1"
+            android:padding="5sp"/>
+           <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="侧模2"
+            android:padding="5sp"/>
+            <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="侧模3"
+            android:padding="5sp"/>
+             <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="侧模4"
+            android:padding="5sp"/>
+    </TableRow>
+    
+    <TableRow 
+       android:gravity="center"
+       android:padding="5sp"
+       android:baselineAligned="true">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="合模顺序"
+            android:padding="5sp"/>
+         <TextView 
+            android:id="@+id/oneOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+          <TextView
+            android:id="@+id/oneTwo" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+           <TextView
+            android:id="@+id/oneThree" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+            <TextView
+            android:id="@+id/oneFour" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+             <TextView 
+            android:id="@+id/oneFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+    </TableRow>
+    
+    <TableRow 
+       android:gravity="center"
+       android:padding="5sp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开模顺序"
+            android:padding="5sp"/>
+         <TextView
+            android:id="@+id/twoOne" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+          <TextView
+            android:id="@+id/twoTwo" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+           <TextView
+            android:id="@+id/twoThree" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+            <TextView
+            android:id="@+id/twoFour" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+             <TextView
+            android:id="@+id/twoFive" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+    </TableRow>
+    
+     <TableRow 
+       android:gravity="center"
+       android:padding="5sp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="到位状态"
+            android:padding="5sp"/>
+         <TextView
+            android:id="@+id/threeOne" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+          <TextView
+            android:id="@+id/threeTwo" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+           <TextView
+            android:id="@+id/threeThree" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+            <TextView
+            android:id="@+id/threeFour" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+             <TextView
+            android:id="@+id/threeFive" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5sp"/>
+    </TableRow>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/white"/>
+    
+     <ListView android:id="@+id/aluStoveStatus"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       
+   </ListView>
+   <View 
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/white"/>
+   
+   
+   <!-- 上模状态的开发 -->
+   
+   <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="8dip" >
+   
+   <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dip"
+    android:background="@drawable/five"
+    android:paddingTop="0dip"/>
+
+   <LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dip">
+        
+     <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="18dip"
+    android:paddingTop="5dip"
+    android:text="上模状态"
+    android:textColor="@color/black"/>
+        
+	<ProgressBar 
+       android:id="@+id/upModelProcess"
+       android:layout_width="70dip"
+       android:layout_height="5dp"
+       android:max="10"
+       style="@android:style/Widget.ProgressBar.Horizontal"/>
+    
+    
+    <TextView android:id="@+id/up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:paddingTop="5dip"
+        android:textColor="@color/black"/>
+    
+    <TextView android:id="@+id/center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+
+    
+    
+    <TextView android:id="@+id/down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dip"
+        android:textColor="@color/black"/>
+      
+</LinearLayout>
+
+   </LinearLayout>
+     
+
+</TableLayout>
