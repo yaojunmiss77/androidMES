@@ -195,9 +195,9 @@ public class MainActivity extends Activity{
 				viewHolder=(ViewHolder)convertView.getTag();
 			}
 			viewHolder.name.setText(String.valueOf(devices.get(position).getName()));
-			viewHolder.number.setText(String.valueOf(devices.get(position).getNumber()));
-			viewHolder.type.setText(String.valueOf(devices.get(position).getType()));
-			viewHolder.date.setText(String.valueOf(devices.get(position).getDate()));
+			viewHolder.number.setText("编号："+String.valueOf(devices.get(position).getNumber()));
+			viewHolder.type.setText("型号："+String.valueOf(devices.get(position).getType()));
+			viewHolder.date.setText("出厂日期："+String.valueOf(devices.get(position).getDate()));
 			/*viewHolder.image.setImageBitmap(((BitmapFactory.decodeResource(getResources(), R.drawable.device))));*/
 			return convertView;
 		}

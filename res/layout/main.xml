@@ -4,13 +4,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
 	style="@style/translucent"
-    android:background="@drawable/beijing" >
+    android:background="@drawable/shape_bg" >
     
    <ListView android:id="@+id/deviceList"
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
        
    </ListView>
+   
+   <TextView 
+            android:textSize="12.0sp" 
+            android:textColor="#ff414141" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="10.0dip" 
+            android:layout_marginTop="2.0dip" 
+            android:layout_marginBottom="10.0dip" 
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="\@CopyRight 浙江工业大学" />
    
 
 </LinearLayout>

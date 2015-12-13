@@ -207,7 +207,12 @@ public class DeviceStatusActivity extends Activity{
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		clientThread.closeSocket();
+		try {
+			clientThread.closeSocket();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -215,7 +220,12 @@ public class DeviceStatusActivity extends Activity{
 	protected void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
-		clientThread.closeSocket();
+		try {
+			clientThread.closeSocket();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -223,7 +233,12 @@ public class DeviceStatusActivity extends Activity{
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		clientThread.closeSocket();
+		try {
+			clientThread.closeSocket();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
