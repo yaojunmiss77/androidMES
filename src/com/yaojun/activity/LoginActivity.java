@@ -8,6 +8,7 @@ import com.yaojun.mes.R;
 import com.yaojun.service.UserService;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -36,20 +37,20 @@ public class LoginActivity extends Activity{
 	Handler handler = new Handler(){
 		@Override
 		public void handleMessage(Message msg) {
-			content = (String)msg.obj;
 			
-			User user=new User();
+			content = (String)msg.obj;
+
 			try {
-				user=JsonUser.getJsonUser(content);
 				
-				if(user.getName()!=null&&user.getNumber().equals(number.getText().toString()))
+				if(content!=null && content.length()>0 && !content.equals("false"))
 				{
-					if(user.getPassword().equals(password.getText().toString()))
-					{
+						User user=new User();
+						user=JsonUser.getJsonUser(content);
 						/*new UserService().insertUser(LoginDb.getReadableDatabase(),user);*/
 						editor=loginUser.edit();
-						editor.putString("userName",number.getText().toString());
-						editor.putString("userPassword", password.getText().toString());
+						editor.putString("name", user.getName());
+						editor.putString("number",user.getNumber());
+						editor.putString("password", user.getPassword());
 						
 						editor.commit();
 						ToastUtil.showMessage(LoginActivity.this, "保存成功");
@@ -57,16 +58,15 @@ public class LoginActivity extends Activity{
 						Intent intent=new Intent(LoginActivity.this,MainActivity.class);
 						startActivity(intent);
 						finish();
-					}
-					else
-					{
-						ToastUtil.showMessage(LoginActivity.this,"密码错误");
-					}
 							
 				}
 				else
 				{
-					ToastUtil.showMessage(LoginActivity.this, "当前用户名不存在");
+					new AlertDialog.Builder(LoginActivity.this)
+					.setIcon(getResources().getDrawable(R.drawable.login_error_icon))
+					.setTitle("登录失败")
+					.setMessage("用户名或密码错误")
+					.create().show();
 				}
 
 				
@@ -87,10 +87,13 @@ public class LoginActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		LoginDb=new MyDatabaseHelper(this, "MES.db3", 1);
 		loginUser=getSharedPreferences("user",MODE_WORLD_READABLE);
-		String userName=loginUser.getString("userName", null);
-		String userPassword=loginUser.getString("userPassword", null);
 		
-		if(userName!=null&&userPassword!=null)
+		//故意写错，这样使得每次都登录
+		String name=loginUser.getString("ame", null);
+		String snumber=loginUser.getString("umber", null);
+		String spassword=loginUser.getString("pssword", null);
+		
+		if(name!=null && snumber != null && spassword !=null)
 		{
 			
 			Intent intent=new Intent(LoginActivity.this,MainActivity.class);
@@ -106,10 +109,37 @@ public class LoginActivity extends Activity{
 	    	
 	    	loginButton.setOnClickListener(new OnClickListener() {
 				
+			
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					new JsonThread(url+"?user="+number+"&password="+password, handler,LoginActivity.this).start();
+					String stringNumber = number.getText().toString();
+					String stringPassword = password.getText().toString();
+					if(stringNumber!=null && stringNumber.length()>0)
+					{
+						if(stringPassword!=null && stringPassword.length()>0)
+						{
+							new JsonThread(url+"?user="+stringNumber+"&password="+stringPassword, handler,LoginActivity.this).start();
+						}
+						else
+						{
+							new AlertDialog.Builder(LoginActivity.this)
+							.setIcon(getResources().getDrawable(R.drawable.login_error_icon))
+							.setTitle("登录失败")
+							.setMessage("密码不能为空")
+							.create().show();
+						}
+						
+					}
+					else
+					{
+						new AlertDialog.Builder(LoginActivity.this)
+						.setIcon(getResources().getDrawable(R.drawable.login_error_icon))
+						.setTitle("登录失败")
+						.setMessage("用户名不能为空")
+						.create().show();
+					}
+					
 				}
 			});
 		}

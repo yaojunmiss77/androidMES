@@ -50,12 +50,12 @@ public class MonitorActivity extends TabActivity{
 		TabHost tabHost=getTabHost();
 		
 		tabHost.addTab(tabHost.newTabSpec("tab1")
-				.setIndicator("设备状态").setContent(new Intent(this,DeviceStatusActivity.class).putExtra("deviceNumber", deviceNumber)));
+				.setIndicator("设备状态",getResources().getDrawable(R.drawable.tab_device)).setContent(new Intent(this,DeviceStatusActivity.class).putExtra("deviceNumber", deviceNumber)));
 		tabHost.addTab(tabHost.newTabSpec("tab1")
-				.setIndicator("模温状态")
+				.setIndicator("模温状态",getResources().getDrawable(R.drawable.tab_temperature))
 						.setContent(new Intent(this,ModelTemperatureChartActivity.class).putExtra("deviceNumber", deviceNumber)));
 		tabHost.addTab(tabHost.newTabSpec("tab1")
-				.setIndicator("充型状态")
+				.setIndicator("充型状态",getResources().getDrawable(R.drawable.tab_freezing))
 						.setContent(new Intent(this,FillChartActivity.class).putExtra("deviceNumber", deviceNumber)));
 	
 	}

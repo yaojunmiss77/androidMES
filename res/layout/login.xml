@@ -1,102 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    style="@style/translucent"
-    android:background="@drawable/beijing" >
-    <RelativeLayout 
-        android:layout_width="match_parent"
-        android:layout_height="55dip"
-        android:layout_gravity="center_vertical">
-        <TextView 
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="万丰科技MES系统"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="italic"
-            />
-        
-    </RelativeLayout>
-    
-    <RelativeLayout 
-        android:layout_width="match_parent"
-        android:layout_height="150dip"
-        android:layout_gravity="center_vertical">
-        <ImageView 
-            android:layout_width="280dip"
-            android:layout_height="120dip"
-            android:layout_centerInParent="true"
-            android:background="@drawable/devic"/>
-    </RelativeLayout>
-    <RelativeLayout 
-        android:layout_width="match_parent"
-        android:layout_height="160dip"
-        android:layout_gravity="center_vertical">
-        
-       
-      <EditText 
-            android:id="@+id/numberEdit"
-            android:layout_width="280dip"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:layout_centerHorizontal="true"
-            android:hint="请输入员工号"
-            android:textColorHint="@color/black"
-            android:numeric="integer"
-            android:drawableLeft="@drawable/people"
-            android:textColor="@color/black"/>
-      <TextView 
-          android:id="@+id/textview"
-          android:layout_width="match_parent"
-          android:layout_height="1dip"
-          android:layout_below="@id/numberEdit"
-          android:background="@drawable/beijing"/>
-        
-           
-      
-         <EditText 
-            android:id="@+id/passwordEdit"
-            android:layout_width="280dip"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:layout_centerInParent="true"
-            android:layout_below="@id/textview"
-            android:hint="请输入密码"
-            android:password="true"
-            android:drawableLeft="@drawable/passwordsuo"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"/>
-         <Button 
-             android:id="@+id/LoginButton"
-             android:layout_alignParentBottom="true"
-             android:layout_width="280dp"
-             android:layout_height="45dp"
-             android:text="登陆"
-             android:textColor="@color/black"
-             android:background="@color/white"
-             android:layout_centerHorizontal="true"
-             />
-        
-    </RelativeLayout>
-    
-    <RelativeLayout 
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_gravity="center_vertical">
-  
-         <TextView 
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="版权所有，防伪必究"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            />
-    </RelativeLayout>
-    
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/mes1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dip"
+            android:text="@string/app_name"
+            android:textColor="#000000"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        
+
+
+       <EditText 
+	    android:id="@+id/numberEdit"
+	    android:layout_width="300dp"
+	    android:layout_height="45dp"
+	    android:textColor="#aaaaaa"
+	    android:textSize="15sp"
+	    android:layout_marginTop="15dp"
+	   	android:layout_gravity="center"
+	    android:background="@drawable/login_selector"
+	    android:hint="QQ号/微信号/手机号"/>
+	<EditText 
+	    android:id="@+id/passwordEdit"
+	    android:layout_width="300dp"
+	    android:layout_height="45dp"
+	    android:textColor="#aaaaaa"
+	    android:textSize="15sp"
+	    android:layout_gravity="center"
+	    android:layout_marginTop="15dp"
+	    android:background="@drawable/login_selector"
+	    android:hint="密码"/>
+	
+	<Button
+            android:id="@+id/LoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/main_login_selector"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingLeft="130dp"
+            android:paddingRight="130dp"
+            android:text="登录"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</RelativeLayout>

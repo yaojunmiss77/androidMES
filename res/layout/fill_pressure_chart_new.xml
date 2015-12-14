@@ -81,7 +81,10 @@
             android:layout_marginLeft="10.0dip" 
             android:layout_marginTop="2.0dip" 
             android:layout_marginBottom="10.0dip" 
-            android:text="*以上数据是充型实时数据，该实时值的获取请在wifi条件下进行，土豪随意" />
+             android:drawableStart="@drawable/warning"
+            android:drawablePadding="4dip"
+            android:gravity="center_vertical"
+            android:text="以上数据是充型实时数据，该实时值的获取请在wifi条件下进行，土豪随意" />
             
             
             <TextView 

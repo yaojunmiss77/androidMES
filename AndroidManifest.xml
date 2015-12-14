@@ -10,10 +10,9 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> 
 
     <application
-        android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.NoTitleBar">
         <activity android:name="com.yaojun.activity.PosterActivity"
 				android:label="@string/app_name">
 			<intent-filter>
