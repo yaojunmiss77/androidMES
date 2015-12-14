@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -36,12 +37,15 @@ public class FillChartActivity extends Activity{
 	MyChartView tu;
 	private String deviceNumber;
 
-	HashMap<Double, Double> map;
+	LinkedHashMap<Double, Double> map;
+
 	Double key=8.0;
 	Double value=0.0;
 	Tools tool=new Tools();
 	int flag=0;
 	ClientThread clientThread;
+	double d=8;
+	double data=0;
 	
 	
 	Handler handler = new Handler(){
@@ -51,10 +55,36 @@ public class FillChartActivity extends Activity{
 			
 			//先转义成字符串
 			  StringTokenizer content = new StringTokenizer(msg.obj.toString(),",;");
-			
+
 			while(content.hasMoreTokens()){
 				
-				randmap(map, Double.parseDouble(content.nextToken().toString()));
+				//首先移除一个图表左边的数据
+				
+				double dataY=Double.parseDouble(content.nextToken().toString());
+				
+				
+				if(map.size()>=7)
+					for(double key : map.keySet())
+					{
+						map.remove(key);
+						
+						break;
+					}
+					
+					
+					map.put(d, data);	
+				
+				
+				randmap(map, data);
+				
+				
+				
+				d++;
+				
+				data+=10;
+				if(data>50)
+					data=0;
+				
 				coolingTimesReal.setText(content.nextToken().toString()+"S");
 				fillPressReal.setText(content.nextToken().toString()+"S");
 				lowTemTimesReal.setText(content.nextToken().toString()+"S");
@@ -89,22 +119,26 @@ public class FillChartActivity extends Activity{
 		deviceNumber=intent.getStringExtra("deviceNumber");
 		ToastUtil.showMessage(FillChartActivity.this, deviceNumber);
 
-		tu= (MyChartView)findViewById(R.id.menulist);
-		tu.SetTuView(map,50,10,"x","y",false);
-		map=new HashMap<Double, Double>();
-		map.put(1.0, (double) 0);
-    	map.put(3.0, 25.0);
-    	map.put(4.0, 32.0);
-    	map.put(5.0, 41.0);
-    	map.put(6.0, 16.0);
-    	map.put(7.0, 36.0);
-    	map.put(8.0, 26.0);
-    	tu.setTotalvalue(50);
-    	tu.setPjvalue(10);
-    	tu.setMap(map);
-		tu.setMargint(20);
-		tu.setMarginb(50);
-		tu.setMstyle(Mstyle.Line);
+		map=new LinkedHashMap<Double, Double>();
+		
+		  tu= (MyChartView)findViewById(R.id.menulist);
+				tu.SetTuView(map,50,10,"x","y",false);
+				
+				map.clear();
+				d=(double)(int)(Math.random()*10);
+				map.put((double)1, (double) 0);
+		    	map.put((double)2,(double) 0);
+		    	map.put((double)3, (double) 0);
+		    	map.put((double)4, (double) 0);
+		    	map.put((double)5, (double) 0);
+		    	map.put((double)6, (double) 0);
+		    	map.put((double)7, (double) 0);
+		    	tu.setTotalvalue(50);
+		    	tu.setPjvalue(10);
+		    	tu.setMap(map);
+				tu.setMargint(20);
+				tu.setMarginb(50);
+				tu.setMstyle(Mstyle.Line);
 		
 		clientThread=new ClientThread(handler);
 		

@@ -89,9 +89,9 @@ public class LoginActivity extends Activity{
 		loginUser=getSharedPreferences("user",MODE_WORLD_READABLE);
 		
 		//故意写错，这样使得每次都登录
-		String name=loginUser.getString("ame", null);
-		String snumber=loginUser.getString("umber", null);
-		String spassword=loginUser.getString("pssword", null);
+		String name=loginUser.getString("name", null);
+		String snumber=loginUser.getString("number", null);
+		String spassword=loginUser.getString("password", null);
 		
 		if(name!=null && snumber != null && spassword !=null)
 		{

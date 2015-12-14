@@ -54,6 +54,25 @@ public class ChartActivity extends Activity {
 
 		@Override
 		public void handleMessage(Message msg) {
+			
+			
+			
+			map.put(Math.random()*10, (double) 0);
+	    	map.put(Math.random()*10, 25.0);
+	    	map.put(Math.random()*10, 32.0);
+	    	map.put(Math.random()*10, 41.0);
+	    	map.put(Math.random()*10, 16.0);
+	    	map.put(Math.random()*10, 36.0);
+	    	map.put(Math.random()*10, 26.0);
+	    	tu.setTotalvalue(50);
+	    	tu.setPjvalue(10);
+	    	tu.setMap(map);
+//			tu.setXstr("");
+//			tu.setYstr("");
+			tu.setMargint(20);
+			tu.setMarginb(50);
+			tu.setMstyle(Mstyle.Line);
+			
 			randmap(map, Double.parseDouble(msg.obj.toString()));
 		}
 		
@@ -67,21 +86,7 @@ public class ChartActivity extends Activity {
 		tu= (MyChartView)findViewById(R.id.menulist);
 		tu.SetTuView(map,50,10,"x","y",false);
 		map=new HashMap<Double, Double>();
-		map.put(1.0, (double) 0);
-    	map.put(3.0, 25.0);
-    	map.put(4.0, 32.0);
-    	map.put(5.0, 41.0);
-    	map.put(6.0, 16.0);
-    	map.put(7.0, 36.0);
-    	map.put(8.0, 26.0);
-    	tu.setTotalvalue(50);
-    	tu.setPjvalue(10);
-    	tu.setMap(map);
-//		tu.setXstr("");
-//		tu.setYstr("");
-		tu.setMargint(20);
-		tu.setMarginb(50);
-		tu.setMstyle(Mstyle.Line);
+		
 		
 		clientThread=new ClientThread(handler);
 		
