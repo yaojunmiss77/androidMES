@@ -92,7 +92,7 @@ public class ModelTemperatureChartActivity extends Activity{
 			Thread.sleep(1000);
 			Message msg=new Message();
 			msg.what=0x345;
-			msg.obj="模温".toString();
+			msg.obj="模温:0".toString();
 			clientThread.revHandler.sendMessage(msg);
 			
 		} catch (Exception e) {
@@ -107,7 +107,30 @@ public class ModelTemperatureChartActivity extends Activity{
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				// TODO Auto-generated method stub
 				
-				System.out.println("你已经选择了我"+position);
+				try {
+					clientThread.closeSocket();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				clientThread=new ClientThread(handler);
+				new Thread(clientThread).start();
+				
+				try {
+					Thread.sleep(1000);
+					Message msg=new Message();
+					msg.what=0x345;
+					msg.obj="模温:".toString()+String.valueOf(position);
+					clientThread.revHandler.sendMessage(msg);
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+					
+					e.printStackTrace();
+				}
+				
+				
 				
 			}
 

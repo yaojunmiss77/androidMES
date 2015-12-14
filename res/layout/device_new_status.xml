@@ -33,10 +33,13 @@
             android:textColor="#ff414141" 
             android:layout_width="wrap_content" 
             android:layout_height="wrap_content" 
-            android:layout_marginLeft="14.0dip" 
+            android:layout_marginStart="14.0dip" 
             android:layout_marginTop="7.0dip" 
             android:layout_marginBottom="7.0dip" 
             android:textStyle="bold"
+            android:drawableStart="@drawable/arrange"
+             android:drawablePadding="4dip"
+            android:gravity="center_vertical"
             android:text="开模合模顺序" />
             
             <include 
@@ -47,9 +50,12 @@
            android:textColor="#ff414141" 
            android:layout_width="wrap_content" 
            android:layout_height="wrap_content" 
-           android:layout_marginLeft="14.0dip" 
+           android:layout_marginStart="14.0dip" 
            android:layout_marginTop="7.0dip" 
            android:layout_marginBottom="7.0dip" 
+           android:drawableStart="@drawable/stove"
+           android:gravity="center_vertical"
+           android:drawablePadding="4dip"
            android:textStyle="bold"
            android:text="铝液炉状态" />
            
@@ -62,10 +68,13 @@
            android:textColor="#ff414141" 
            android:layout_width="wrap_content" 
            android:layout_height="wrap_content" 
-           android:layout_marginLeft="14.0dip" 
+           android:layout_marginStart="14.0dip" 
            android:layout_marginTop="7.0dip" 
            android:layout_marginBottom="7.0dip" 
            android:textStyle="bold"
+           android:drawableStart="@drawable/up_model"
+           android:drawablePadding="4dip"
+           android:gravity="center_vertical"
            android:text="上模状态" />
            
 			<include 

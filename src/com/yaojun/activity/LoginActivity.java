@@ -23,7 +23,7 @@ import tool.JsonUser;
 import tool.ToastUtil;
 
 public class LoginActivity extends Activity{
-	private static final String url ="http://192.168.253.1:8080/MES/android/AndroidLoginAction.action?name=yaojun";
+	private static final String url ="http://192.168.253.1:8080/MES/android/AndroidLoginAction.action";
 	MyDatabaseHelper LoginDb;
 	EditText number,password;
 	Button loginButton;
@@ -109,7 +109,7 @@ public class LoginActivity extends Activity{
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					new JsonThread(url, handler,LoginActivity.this).start();
+					new JsonThread(url+"?user="+number+"&password="+password, handler,LoginActivity.this).start();
 				}
 			});
 		}

@@ -22,9 +22,12 @@
             android:textColor="#ff414141" 
             android:layout_width="wrap_content" 
             android:layout_height="wrap_content" 
-            android:layout_marginLeft="14.0dip" 
+            android:layout_marginStart="14.0dip" 
             android:layout_marginTop="7.0dip" 
             android:layout_marginBottom="7.0dip" 
+            android:drawableStart="@drawable/chart"
+            android:drawablePadding="4dip"
+            android:gravity="center_vertical"
             android:textStyle="bold"
             android:text="模温曲线" />
             
@@ -42,6 +45,9 @@
             android:layout_marginLeft="14.0dip" 
             android:layout_marginTop="7.0dip" 
             android:layout_marginBottom="7.0dip" 
+            android:drawableStart="@drawable/road"
+            android:drawablePadding="4dip"
+            android:gravity="center_vertical"
             android:textStyle="bold"
             android:text="通道选择" />
              
