@@ -1,9 +1,12 @@
 package com.yaojun.activity;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -17,6 +20,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,18 +33,21 @@ import tool.ToastUtil;
 import tool.Tools;
 import tool.MyChartView.Mstyle;
 
-@SuppressLint("HandlerLeak")
+@SuppressLint({ "HandlerLeak", "SimpleDateFormat" })
 public class ModelTemperatureChartActivity extends Activity{
 	
 	Spinner selectRoad;
 	Handler handler;
 	ClientThread clientThread;
 	MyChartView tu;
-	HashMap<Double, Double> map;
+	LinkedHashMap<Double, Double> map;
 	Double key=8.0;
 	Double value=0.0;
 	Tools tool=new Tools();
 	private String deviceNumber;
+	@SuppressLint("SimpleDateFormat")
+	SimpleDateFormat sdf = new SimpleDateFormat( "yyyy/MM/dd HH:mm:ss" ); 
+	SimpleDateFormat sdf1 = new SimpleDateFormat( "HHmmss" ); 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -51,21 +58,7 @@ public class ModelTemperatureChartActivity extends Activity{
 		tu= (MyChartView)findViewById(R.id.modelTemChart);
 		selectRoad=(Spinner)findViewById(R.id.select_road);
 		
-		tu.SetTuView(map,50,10,"x","y",false);
-		map=new HashMap<Double, Double>();
-		map.put(1.0, (double) 0);
-    	map.put(3.0, 25.0);
-    	map.put(4.0, 32.0);
-    	map.put(5.0, 41.0);
-    	map.put(6.0, 16.0);
-    	map.put(7.0, 36.0);
-    	map.put(8.0, 26.0);
-    	tu.setTotalvalue(50);
-    	tu.setPjvalue(10);
-    	tu.setMap(map);
-		tu.setMargint(20);
-		tu.setMarginb(50);
-		tu.setMstyle(Mstyle.Line);
+		
 		
 		handler=new Handler(){
 
@@ -75,7 +68,34 @@ public class ModelTemperatureChartActivity extends Activity{
 				
 				//先转义成字符串
 				StringTokenizer content = new StringTokenizer(msg.obj.toString(),",;");
-				randmap(map, Double.parseDouble(content.nextToken().toString()));
+				
+				double dataY=Double.parseDouble(content.nextToken().toString());
+				Double times = null;
+				try {
+					
+					times=Double.parseDouble(sdf1.format(sdf.parse(content.nextToken().toString())));
+					
+					Log.d("yaojunLog", "当前时间为:"+String.valueOf(times));
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				if(map.size()>=6)
+					for(double key : map.keySet())
+					{
+						map.remove(key);
+						
+						break;
+					}
+					
+				
+				map.put(times, dataY);
+
+				randmap(map, dataY);		
 				super.handleMessage(msg);
 			}
 			
@@ -84,6 +104,27 @@ public class ModelTemperatureChartActivity extends Activity{
 		Intent intent=getIntent();
 		deviceNumber=intent.getStringExtra("deviceNumber");
 		ToastUtil.showMessage(ModelTemperatureChartActivity.this, deviceNumber);
+		
+		map=new LinkedHashMap<Double, Double>();
+		
+		tu= (MyChartView)findViewById(R.id.modelTemChart);
+				tu.SetTuView(map,50,10,"","",false);
+				
+				map.clear();
+			
+				map.put((double)1, (double) 0);
+		    	map.put((double)2,(double) 0);
+		    	map.put((double)3, (double) 0);
+		    	map.put((double)4, (double) 0);
+		    	map.put((double)5, (double) 0);
+		    	map.put((double)6, (double) 0);
+		    	/*map.put((double)7, (double) 0);*/
+		    	tu.setTotalvalue(50);
+		    	tu.setPjvalue(10);
+		    	tu.setMap(map);
+				tu.setMargint(20);
+				tu.setMarginb(50);
+				tu.setMstyle(Mstyle.Line);
 		
 		clientThread=new ClientThread(handler);
 		new Thread(clientThread).start();
@@ -197,10 +238,10 @@ public class ModelTemperatureChartActivity extends Activity{
 			dvz[t]=(Double)mapentry.getValue();
 			t+=1;
 		} 
-		 for(int j=0;j<dz.size()-1;j++)
+		/* for(int j=0;j<dz.size()-1;j++)
 		 {
 			 mp.put(dz.get(j), mp.get(dz.get(j+1)));
-		 }
+		 }*/
 		 mp.put((Double)dz.get(mp.size()-1), d);
 		 tu.postInvalidate();
 	}

@@ -1,6 +1,8 @@
 package com.yaojun.activity;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -12,7 +14,7 @@ import java.util.Timer;
 
 import com.yaojun.mes.R;
 import com.yaojun.socket.ClientThread;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -29,6 +31,7 @@ import tool.Tools;
 import tool.MyChartView.Mstyle;
 import tool.ToastUtil;
 
+@SuppressLint("SimpleDateFormat")
 public class FillChartActivity extends Activity{
 	
 	TextView coolingTimesReal,fillPressReal,lowTemTimesReal,textView1;
@@ -45,9 +48,11 @@ public class FillChartActivity extends Activity{
 	Tools tool=new Tools();
 	int flag=0;
 	ClientThread clientThread;
+	@SuppressLint("SimpleDateFormat")
+	SimpleDateFormat sdf = new SimpleDateFormat( "yyyy/MM/dd HH:mm:ss" ); 
+	SimpleDateFormat sdf1 = new SimpleDateFormat( "HHmmss" ); 
 	double d=8;
 	double data=0;
-	double data1=0;
 	
 	
 	Handler handler = new Handler(){
@@ -63,9 +68,24 @@ public class FillChartActivity extends Activity{
 				//首先移除一个图表左边的数据
 				
 				double dataY=Double.parseDouble(content.nextToken().toString());
+				Double times = null;
+				try {
+					
+					times=Double.parseDouble(sdf1.format(sdf.parse(content.nextToken().toString())));
+					
+					Log.d("yaojunLog", "当前时间为:"+String.valueOf(times));
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				
-				if(map.size()>=7)
+				
+				
+				if(map.size()>=6)
 					for(double key : map.keySet())
 					{
 						map.remove(key);
@@ -73,11 +93,8 @@ public class FillChartActivity extends Activity{
 						break;
 					}
 					
-					
-						
 				
-				
-				map.put(d, data);
+				map.put(times, dataY);
 				Log.d("yaojunLog","d的值为:"+String.valueOf(d));
 				Log.d("yaojunLog","相对应的值为"+String.valueOf(data));
 				
@@ -87,13 +104,8 @@ public class FillChartActivity extends Activity{
 				}
 				
 				
-				randmap(map, data);
+				randmap(map, dataY);		
 				
-				d++;			
-				
-				data+=10;
-				if(data>50)
-					data=0;
 				
 				coolingTimesReal.setText(content.nextToken().toString()+"S");
 				fillPressReal.setText(content.nextToken().toString()+"S");
@@ -132,7 +144,7 @@ public class FillChartActivity extends Activity{
 		map=new LinkedHashMap<Double, Double>();
 		
 		  tu= (MyChartView)findViewById(R.id.menulist);
-				tu.SetTuView(map,50,10,"x","y",false);
+				tu.SetTuView(map,50,10,"","",false);
 				
 				map.clear();
 			
@@ -141,8 +153,8 @@ public class FillChartActivity extends Activity{
 		    	map.put((double)3, (double) 0);
 		    	map.put((double)4, (double) 0);
 		    	map.put((double)5, (double) 0);
-		    	map.put((double)6, (double) 0);
-		    	map.put((double)7, (double) 0);
+		    	/*map.put((double)6, (double) 0);
+		    	map.put((double)7, (double) 0);*/
 		    	tu.setTotalvalue(50);
 		    	tu.setPjvalue(10);
 		    	tu.setMap(map);
