@@ -19,6 +19,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -46,6 +47,7 @@ public class FillChartActivity extends Activity{
 	ClientThread clientThread;
 	double d=8;
 	double data=0;
+	double data1=0;
 	
 	
 	Handler handler = new Handler(){
@@ -72,14 +74,22 @@ public class FillChartActivity extends Activity{
 					}
 					
 					
-					map.put(d, data);	
+						
+				
+				
+				map.put(d, data);
+				Log.d("yaojunLog","d的值为:"+String.valueOf(d));
+				Log.d("yaojunLog","相对应的值为"+String.valueOf(data));
+				
+				for(Double key : map.keySet())
+				{
+					Log.d("yaojunLog", "建为:"+String.valueOf(key)+"值为:"+map.get(key));
+				}
 				
 				
 				randmap(map, data);
 				
-				
-				
-				d++;
+				d++;			
 				
 				data+=10;
 				if(data>50)
@@ -125,7 +135,7 @@ public class FillChartActivity extends Activity{
 				tu.SetTuView(map,50,10,"x","y",false);
 				
 				map.clear();
-				d=(double)(int)(Math.random()*10);
+			
 				map.put((double)1, (double) 0);
 		    	map.put((double)2,(double) 0);
 		    	map.put((double)3, (double) 0);
@@ -215,10 +225,10 @@ public class FillChartActivity extends Activity{
 			dvz[t]=(Double)mapentry.getValue();
 			t+=1;
 		} 
-		 for(int j=0;j<dz.size()-1;j++)
+		/* for(int j=0;j<dz.size()-1;j++)
 		 {
 			 mp.put(dz.get(j), mp.get(dz.get(j+1)));
-		 }
+		 }*/
 		 mp.put((Double)dz.get(mp.size()-1), d);
 		 tu.postInvalidate();
 	}

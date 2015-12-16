@@ -50,7 +50,7 @@
 	    android:layout_marginTop="15dp"
 	   	android:layout_gravity="center"
 	    android:background="@drawable/login_selector"
-	    android:hint="QQ号/微信号/手机号"/>
+	    android:hint="用户名"/>
 	<EditText 
 	    android:id="@+id/passwordEdit"
 	    android:layout_width="300dp"
